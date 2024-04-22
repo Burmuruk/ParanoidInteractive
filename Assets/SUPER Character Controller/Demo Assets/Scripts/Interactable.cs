@@ -5,11 +5,11 @@ using UnityEngine.Events;
 using SUPERCharacter;
 
 [RequireComponent(typeof(Collider))]
-public class Interactable : MonoBehaviour, IInteractable
+public class Interactable : PlayerManager, IInteractable
 {
     public UnityEvent OnInteract;
 
-    public bool Interact(){
+    public bool imInteractive(){
         OnInteract.Invoke();
         return true;
     }

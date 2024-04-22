@@ -20,7 +20,7 @@ using UnityEngine.InputSystem.Interactions;
 // more camera animations
 namespace SUPERCharacter{
 [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(CapsuleCollider))][AddComponentMenu("SUPER Character/SUPER Character Controller")]
-public class SUPERCharacterAIO : MonoBehaviour{
+public class SUPERCharacterAIO : PlayerManager{
     #region Variables
 
     public bool controllerPaused = false;
@@ -1484,14 +1484,15 @@ public class SUPERCharacterAIO : MonoBehaviour{
                     }
                 }
             }
-            return ((interactable != null)? interactable.Interact() : false);
+            return ((interactable != null)? interactable.imInteractive() : false);
             
-        }else{
+        }
+        else{
             RaycastHit h;
             if(Physics.SphereCast(playerCamera.transform.position,0.25f,playerCamera.transform.forward,out h,interactRange,interactableLayer,QueryTriggerInteraction.Ignore)){
                 IInteractable i = h.collider.GetComponent<IInteractable>();
                 if(i!=null){
-                    return i.Interact();
+                    return i.imInteractive();
                 }
             }
         }
@@ -1623,7 +1624,7 @@ public enum PauseModes{MakeKinematic, FreezeInPlace,BlockInputOnly}
 
 #region Interfaces
 public interface IInteractable{
-    bool Interact();
+    bool imInteractive();
 }
 
 public interface ICollectable{

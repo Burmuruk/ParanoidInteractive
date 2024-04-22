@@ -19,6 +19,10 @@ public class PlayerManager : MonoBehaviour
         sanidad = sanidadActual;
         return sanidad;
     }
+    bool imInteractive()
+    {
+        return true;
+    }
     void Alucionaciones()
     {
 

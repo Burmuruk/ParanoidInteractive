@@ -7,7 +7,7 @@ public class Door : MonoBehaviour, IInteractable
 {   
     public float openAngle = -105;
     public bool reverse, doorOpen = false;
-    public bool Interact(){
+    public bool imInteractive(){
         if(!doorOpen){
             StartCoroutine(OpenDoor());
             doorOpen = true;
