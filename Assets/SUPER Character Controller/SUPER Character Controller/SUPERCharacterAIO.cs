@@ -580,8 +580,6 @@ public class SUPERCharacterAIO : MonoBehaviour{
     void FixedUpdate() {
         if(!controllerPaused){
 
-            
-
             #region Movement
             if(enableMovementControl){
                 GetGroundInfo();
