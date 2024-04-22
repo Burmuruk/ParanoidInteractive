@@ -24,9 +24,11 @@ public class SUPERCharacterAIO : PlayerManager{
     #region Variables
 
     public bool controllerPaused = false;
+    public GameObject objectPicked;
+    public Transform handTransform;
 
-    #region Camera Settings
-    [Header("Camera Settings")]
+        #region Camera Settings
+        [Header("Camera Settings")]
     //
     //Public
     //
@@ -295,8 +297,8 @@ public class SUPERCharacterAIO : PlayerManager{
     public bool enableGroundingDebugging = false, enableMovementDebugging = false, enableMouseAndCameraDebugging = false, enableVaultDebugging = false;
     #endregion
     void Start(){
-   
-        
+
+            handTransform = transform.GetChild(1);
         
         #region Camera
         maxCameraDistInternal = maxCameraDistance;
