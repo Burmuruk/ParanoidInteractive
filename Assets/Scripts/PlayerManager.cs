@@ -61,17 +61,14 @@ public class PlayerManager : MonoBehaviour
 
         }
     }
-    int BarSanidad(int sanidadActual, int sanidadPerdida)
+    int BarSanidad(int sanidadPerdida)
     {
-        sanidadActual -= sanidadPerdida;
-        m_sanidadActual = sanidadActual;
+        m_sanidadActual -= sanidadPerdida;
         return m_sanidadActual;
     }
-    int BarSanidad(int sanidadActual, int sanidadRecuperada, int sanidad)
+    int BarSanidadMas(int sanidadRecuperada)
     {
-        sanidadActual += sanidadRecuperada;
-        sanidad = sanidadActual;
-        m_sanidadActual= sanidad;
+        m_sanidadActual += sanidadRecuperada;
         return m_sanidadActual;
     }
     bool imInteractive()
