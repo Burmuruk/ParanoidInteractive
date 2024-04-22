@@ -61,25 +61,25 @@ public class PlayerManager : MonoBehaviour
 
         }
     }
-    int BarSanidad(int sanidadPerdida)
+    public int BarSanidad(int sanidadPerdida)
     {
         m_sanidadActual -= sanidadPerdida;
         return m_sanidadActual;
     }
-    int BarSanidadMas(int sanidadRecuperada)
+    public int BarSanidadMas(int sanidadRecuperada)
     {
         m_sanidadActual += sanidadRecuperada;
         return m_sanidadActual;
     }
-    bool imInteractive()
+    public bool imInteractive()
     {
         return true;
     }
-    void Alucionaciones()
+    public void Alucionaciones()
     {
 
     }
-    void ChangeController()
+    public void ChangeController()
     {
 
     }
