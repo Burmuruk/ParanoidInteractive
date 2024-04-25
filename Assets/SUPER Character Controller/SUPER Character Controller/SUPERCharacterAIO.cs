@@ -1491,7 +1491,7 @@ public class SUPERCharacterAIO : PlayerManager{
         }
         else{
             RaycastHit h;
-            if(Physics.SphereCast(playerCamera.transform.position,0.25f,playerCamera.transform.forward,out h,interactRange,interactableLayer,QueryTriggerInteraction.Ignore)){
+            if(Physics.SphereCast(playerCamera.transform.position,0.25f,playerCamera.transform.forward,out h,interactRange,interactableLayer)){
                 IInteractable i = h.collider.GetComponent<IInteractable>();
                 if(i!=null){
                     return i.imInteractive();
