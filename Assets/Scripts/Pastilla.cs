@@ -7,6 +7,7 @@ public class Pastilla : MonoBehaviour, ICollectable, IMission, IInteractable, IM
     [SerializeField] int sanityValue;
     [SerializeField] float activitionTime;
     [SerializeField] float deactivitionTime;
+    [SerializeField] new string name;
     bool hasFinished;
     bool isEnabled = false;
 
@@ -83,5 +84,10 @@ public class Pastilla : MonoBehaviour, ICollectable, IMission, IInteractable, IM
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
         hasFinished = false;
+    }
+
+    public string GetName()
+    {
+        return name;
     }
 }

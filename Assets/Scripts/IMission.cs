@@ -7,6 +7,7 @@ public interface IMission
     int GetSanityValue();
     bool HasFinished();
     int GetHash();
+    string GetName();
 }
 
 public interface IMissionTimer

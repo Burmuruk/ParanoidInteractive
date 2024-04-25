@@ -19,16 +19,6 @@ public class MissionSequence : MonoBehaviour, IMission
         current++;
     }
 
-    public float GetActivationTime()
-    {
-        throw new NotImplementedException();
-    }
-
-    public float GetAlarm()
-    {
-        throw new NotImplementedException();
-    }
-
     public int GetHash()
     {
         return missions[current].GetHash();
@@ -54,5 +44,10 @@ public class MissionSequence : MonoBehaviour, IMission
         }
 
         current = 0;
+    }
+
+    public string GetName()
+    {
+        return missions[current].GetName();
     }
 }

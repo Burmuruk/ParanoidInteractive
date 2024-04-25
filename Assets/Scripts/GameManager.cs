@@ -19,6 +19,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentDay;
     public float tiempo;
     List<IMissionTimer> missionsTime;
+    MissionManager missionManager;
+
+    public event Action OnDayStarted;
+    public event Action OnDayFinished;
+
+    private void Awake()
+    {
+        missionManager = FindObjectOfType<MissionManager>();
+    }
 
     void Update() {
 
@@ -29,6 +38,7 @@ public class GameManager : MonoBehaviour
 
         if (timer >= dayDuration * 3600) {
             if (currentDay == 3) {
+                OnDayFinished?.Invoke();
                 changeGameState(GameState.GameOver);
             }
             ChangeDay();
@@ -38,6 +48,7 @@ public class GameManager : MonoBehaviour
     private void ChangeDay() {
         timer = dayDuration;
         currentDay++;
+        OnDayStarted?.Invoke();
     }
 
     void Start() {
@@ -45,6 +56,8 @@ public class GameManager : MonoBehaviour
         timer = 0;
         currentDay = 0;
         changeGameState(GameState.Play);
+
+        OnDayStarted += missionManager.ChangeDay;
     }
 
     void changeGameState(GameState newState) {
