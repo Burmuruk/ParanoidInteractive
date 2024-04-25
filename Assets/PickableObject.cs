@@ -20,7 +20,7 @@ public class PickableObject : MonoBehaviour, IInteractable
 
     IEnumerator PickObject()
     {
-        var player = FindAnyObjectByType<SUPERCharacterAIO>();
+        var player = FindObjectOfType<SUPERCharacterAIO>();
         this.transform.position = player.handTransform.position;
         player.objectPicked = this.gameObject;
         transform.parent = player.handTransform;
