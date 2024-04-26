@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MissionManager : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> missionsEditor = null;
     [SerializeField] private List<IMission> missions = new();
     private List<IMission> missionsDone = new();
+    UIMission UIMission;
 
     PlayerManager playerManager;
 
@@ -14,9 +17,22 @@ public class MissionManager : MonoBehaviour
         public readonly bool completed;
     }
 
+    private void Awake()
+    {
+        var newMissions = from m in missionsEditor where m.GetComponent<IMission>() != null select m.GetComponent<IMission>();
+        
+        foreach (var m in newMissions)
+        {
+            missions.Add(m);
+        }
+    }
+
     private void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
+        UIMission = FindObjectOfType<UIMission>();
+
+        UIMission.UpdateMissions(missions.ToArray());
     }
 
     private void OnEnable()
@@ -41,6 +57,8 @@ public class MissionManager : MonoBehaviour
                 missionsDone.RemoveAt(0); 
             }
         }
+
+        UIMission.UpdateMissions(missions.ToArray());
     }
 
     private void DisableMission(IMission mission)
