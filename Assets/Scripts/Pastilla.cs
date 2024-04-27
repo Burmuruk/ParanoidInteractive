@@ -15,12 +15,12 @@ public class Pastilla : MonoBehaviour, ICollectable, IMission, IInteractable, IM
 
     private void Update()
     {
-        if (!isEnabled && GameManager.timer >= GetActivationTime()
-            && GameManager.timer < GetDeactivationTime())
+        if (!isEnabled && GameManager.time >= GetActivationTime()
+            && GameManager.time < GetDeactivationTime())
         {
             Enable();
         }
-        else if (isEnabled && GameManager.timer >= GetDeactivationTime())
+        else if (isEnabled && GameManager.time >= GetDeactivationTime())
         {
             Disable();
         }
