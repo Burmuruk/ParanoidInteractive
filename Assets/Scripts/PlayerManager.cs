@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     //barra de sanidad
     //alucionaciones
     //alteracion de movimiento
-    BarStates barStates;
+    public BarStates barStates;
     float timeActual;
     int barra;
     private void Start()
@@ -97,7 +97,7 @@ public class PlayerManager : MonoBehaviour
     {
 
     }
-    private enum BarStates
+    public enum BarStates
     {
         None,
         Normal,
