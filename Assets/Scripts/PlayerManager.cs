@@ -19,11 +19,10 @@ public class PlayerManager : MonoBehaviour
     }
     public void Barra(float time)
     {
-        if (time %2<=0.1f && time<timeActual)
+        if (time > 0 && time % 2<=0.01f && time > timeActual * 2 - .1)
         {
             timeActual = time;
             barra += 1;
-            Debug.Log(barra);
         }
     }
     public void DecisionManager()
