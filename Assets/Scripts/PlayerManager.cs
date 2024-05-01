@@ -5,37 +5,46 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private int m_sanidadActual;
+    GameManager gameManager;
     //barra de sanidad
     //alucionaciones
     //alteracion de movimiento
     BarStates barStates;
+    float timeActual;
+    int barra;
     private void Start()
     {
         barStates = BarStates.Normal;
+        gameManager=GetComponent<GameManager>();
     }
-    private void FixedUpdate()
+    public void Barra(float time)
     {
-        DecisionManager();
+        if (time %2<=0.1f && time<timeActual)
+        {
+            timeActual = time;
+            barra += 1;
+            Debug.Log(barra);
+        }
     }
-    void DecisionManager()
+    public void DecisionManager()
     {
-        if (m_sanidadActual == 5)
+        if (barra == 1)
         {
             barStates=BarStates.Normal;
         }
-        else if (m_sanidadActual == 4)
+        else if (barra == 2)
         {
             barStates = BarStates.MasomenosNormal;
         }
-        else if (m_sanidadActual == 3)
+        else if (barra == 3)
         {
             barStates = BarStates.Masomenos;
         }
-        else if (m_sanidadActual == 2)
+        else if (barra == 4)
         {
             barStates = BarStates.MasomenosMal;
         }
-        else if (m_sanidadActual == 1)
+        else if (barra <= 5)
         {
             barStates = BarStates.Mal;
         }
