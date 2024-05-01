@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    private int m_sanidadActual;
     GameManager gameManager;
     //barra de sanidad
     //alucionaciones
@@ -29,11 +28,6 @@ public class PlayerManager : MonoBehaviour
             barra += 1;
             DecisionManager(barra);
         }
-    }
-    public void BarraTareas(int isTrue)
-    {
-        barra += isTrue;
-        DecisionManager(barra);
     }
     public void DecisionManager(int barra)
     {
@@ -81,13 +75,15 @@ public class PlayerManager : MonoBehaviour
     }
     public int BarSanidad(int sanidadPerdida)
     {
-        m_sanidadActual -= sanidadPerdida;
-        return m_sanidadActual;
+        barra -= sanidadPerdida;
+        DecisionManager(barra);
+        return barra;
     }
     public int BarSanidadMas(int sanidadRecuperada)
     {
-        m_sanidadActual += sanidadRecuperada;
-        return m_sanidadActual;
+        barra += sanidadRecuperada;
+        DecisionManager(barra);
+        return barra;
     }
     public bool imInteractive()
     {
