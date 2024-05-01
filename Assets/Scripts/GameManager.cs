@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             }
             ChangeDay();
         }
-        playerManager.Barra(time);
+        playerManager.BarraTime(time);
     }
 
     private void ChangeDay() {

@@ -17,15 +17,25 @@ public class PlayerManager : MonoBehaviour
         barStates = BarStates.Normal;
         gameManager=GetComponent<GameManager>();
     }
-    public void Barra(float time)
+    private void Update()
+    {
+        
+    }
+    public void BarraTime(float time)
     {
         if (time > 0 && time % 2<=0.01f && time > timeActual * 2 - .1)
         {
             timeActual = time;
             barra += 1;
+            DecisionManager(barra);
         }
     }
-    public void DecisionManager()
+    public void BarraTareas(int isTrue)
+    {
+        barra += isTrue;
+        DecisionManager(barra);
+    }
+    public void DecisionManager(int barra)
     {
         if (barra == 1)
         {
