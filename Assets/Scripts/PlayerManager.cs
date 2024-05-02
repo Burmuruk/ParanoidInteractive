@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,16 +6,21 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     GameManager gameManager;
+    WalkiesManager walkiesManager;
     //barra de sanidad
     //alucionaciones
     //alteracion de movimiento
     public BarStates barStates;
     float timeActual;
     int barra;
+    HallucinationManager hallucinationManager;
+
     private void Start()
     {
         barStates = BarStates.Normal;
         gameManager=GetComponent<GameManager>();
+        walkiesManager = GetComponent<WalkiesManager>();
+        hallucinationManager = FindObjectOfType<HallucinationManager>();
     }
     private void Update()
     {
@@ -47,7 +53,7 @@ public class PlayerManager : MonoBehaviour
         {
             barStates = BarStates.MasomenosMal;
         }
-        else if (barra <= 5)
+        else if (barra > 4)
         {
             barStates = BarStates.Mal;
         }
@@ -67,10 +73,11 @@ public class PlayerManager : MonoBehaviour
             case BarStates.Masomenos:
                 break;
             case BarStates.MasomenosMal:
+                (hallucinationManager ??= FindObjectOfType<HallucinationManager>()).ShowHallucination();
                 break;
             case BarStates.Mal:
+                (hallucinationManager??= FindObjectOfType<HallucinationManager>()).ShowHallucination();
                 break;
-
         }
     }
     public int BarSanidad(int sanidadPerdida)

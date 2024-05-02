@@ -86,11 +86,18 @@ public class MissionManager : MonoBehaviour
 
     private void RestartRandomMission()
     {
+        if (playerManager.barStates != PlayerManager.BarStates.MasomenosMal
+            && playerManager.barStates != PlayerManager.BarStates.Mal)
+            return;
+
+        var rand = UnityEngine.Random.Range(0, 3);
+
+        if (rand != 1) return;
+
         int idx = missionsDone.Count > 1 ? UnityEngine.Random.Range(0, missionsDone.Count) : 0;
 
         if ((int)playerManager.barStates >= 3)
         {
-            //Alucionacion
             missionsDone[idx].Restart();
         }
     }

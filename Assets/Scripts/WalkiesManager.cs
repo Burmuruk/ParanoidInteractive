@@ -9,7 +9,7 @@ public class WalkiesManager : MonoBehaviour
     [SerializeField] WalkieFace[] faces;
     [SerializeField] int sanity = 0;
     List<Walkie> activeWalkies = new List<Walkie>();
-    [SerializeField] GameObject spawnTest;
+    [SerializeField] GameObject[] spawnPoints;
 
     [Serializable]
     record WalkieBodie
@@ -26,15 +26,25 @@ public class WalkiesManager : MonoBehaviour
         public string[] dialogs;
     }
 
-    private void Start()
+    [Serializable]
+    struct SpawnData
     {
-        ShowWalkie(spawnTest.transform);
+        public readonly GameObject spawnPoint;
+
+        public int Uses { get; private set; }
+
+        public SpawnData(GameObject spawnPoint)
+        {
+            this.spawnPoint = spawnPoint;
+            Uses = 0;
+        }
     }
 
     public void SetSanity(int sanity) => this.sanity = sanity;
 
-    public void ShowWalkie(Transform spawnPoint)
+    public void ShowWalkie()
     {
+        Transform spawnPoint = GetSpawnPoint();
         int bodyId = UnityEngine.Random.Range(0, bodies.Length);
 
         var body = Instantiate(bodies[bodyId].body, spawnPoint);
@@ -44,6 +54,12 @@ public class WalkiesManager : MonoBehaviour
         var walkieCmp = body.AddComponent<Walkie>();
         walkieCmp.SetDialog(face.dialogs[UnityEngine.Random.Range(0, face.dialogs.Length)]);
         activeWalkies.Add(walkieCmp);
+    }
+
+    private Transform GetSpawnPoint()
+    {
+        var rand = UnityEngine.Random.Range(0, spawnPoints.Length);
+        return spawnPoints[rand].transform;
     }
 
     public List<Walkie> GetActiveWalkies() { return activeWalkies; }
