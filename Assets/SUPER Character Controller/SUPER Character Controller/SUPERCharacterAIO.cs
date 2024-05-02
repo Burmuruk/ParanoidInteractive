@@ -26,6 +26,7 @@ public class SUPERCharacterAIO : PlayerManager{
     public bool controllerPaused = false;
     public GameObject objectPicked;
     public Transform handTransform;
+    Ray ray;
 
         #region Camera Settings
         [Header("Camera Settings")]
@@ -1490,13 +1491,17 @@ public class SUPERCharacterAIO : PlayerManager{
             
         }
         else{
-            RaycastHit h;
-            if(Physics.SphereCast(playerCamera.transform.position,0.25f,playerCamera.transform.forward,out h,interactRange,interactableLayer)){
-                IInteractable i = h.collider.GetComponent<IInteractable>();
-                if(i!=null){
-                    return i.imInteractive();
+                ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit h;
+                if (Physics.Raycast(ray, out h, 2.5f))
+                {
+                    IInteractable i = h.collider.GetComponent<IInteractable>();
+                    print(i);
+                    if (i != null)
+                    {
+                        return i.imInteractive();
+                    }
                 }
-            }
         }
         return false;
     }
