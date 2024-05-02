@@ -52,4 +52,6 @@ public class PickableObject : MonoBehaviour, IInteractable
         }
         yield return null;
     }
+
+
 }

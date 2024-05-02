@@ -7,7 +7,7 @@ public class MissionSequence : MonoBehaviour, IMission
     [SerializeField] List<IMission> missions = new List<IMission>();
     int current;
 
-    public event Action<IMission> OnMissionCompleted;
+    public virtual event Action<IMission> OnMissionCompleted;
 
     private void Start()
     {
