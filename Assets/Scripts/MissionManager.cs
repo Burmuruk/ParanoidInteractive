@@ -75,11 +75,23 @@ public class MissionManager : MonoBehaviour
             }
         }
 
-        ReportProgress(mission.GetSanityValue());
+        ReportProgress(mission.GetSanityValue());   
+        RestartRandomMission();
     }
 
     private void ReportProgress(int value)
     {
         playerManager.BarSanidadMas(value);
+    }
+
+    private void RestartRandomMission()
+    {
+        int idx = missionsDone.Count > 1 ? UnityEngine.Random.Range(0, missionsDone.Count) : 0;
+
+        if ((int)playerManager.barStates >= 3)
+        {
+            //Alucionacion
+            missionsDone[idx].Restart();
+        }
     }
 }

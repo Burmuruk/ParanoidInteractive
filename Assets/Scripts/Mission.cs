@@ -8,7 +8,7 @@ public class Mission : MonoBehaviour, IMission
     protected bool hasFinished;
     protected bool isEnabled = false;
 
-    public event Action<IMission> OnMissionCompleted;
+    public virtual event Action<IMission> OnMissionCompleted;
 
     public virtual int GetHash() => GetHashCode();
 

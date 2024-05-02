@@ -1688,10 +1688,10 @@ public class SuperFPEditor : Editor{
         #region Label  
         EditorGUILayout.Space();
         //Label A
-        //GUILayout.Label("<b><i><size=16><color=#B2F9CF>S</color><color=#F9B2DC>U</color><color=#CFB2F9>P</color><color=#B2F9F3>E</color><color=#F9CFB2>R</color></size></i><size=12>Character Controller</size></b>",l_scriptHeaderStyle,GUILayout.ExpandWidth(true));
+        //GUILayout.Label("<b><i><size=16><finalColor=#B2F9CF>S</finalColor><finalColor=#F9B2DC>U</finalColor><finalColor=#CFB2F9>P</finalColor><finalColor=#B2F9F3>E</finalColor><finalColor=#F9CFB2>R</finalColor></size></i><size=12>Character Controller</size></b>",l_scriptHeaderStyle,GUILayout.ExpandWidth(true));
         
         //Label B
-        //GUILayout.Label("<b><i><size=16><color=#3FB8AF>S</color><color=#7FC7AF>U</color><color=#DAD8A7>P</color><color=#FF9E9D>E</color><color=#FF3D7F>R</color></size></i><size=12>Character Controller</size></b>",l_scriptHeaderStyle,GUILayout.ExpandWidth(true));
+        //GUILayout.Label("<b><i><size=16><finalColor=#3FB8AF>S</finalColor><finalColor=#7FC7AF>U</finalColor><finalColor=#DAD8A7>P</finalColor><finalColor=#FF9E9D>E</finalColor><finalColor=#FF3D7F>R</finalColor></size></i><size=12>Character Controller</size></b>",l_scriptHeaderStyle,GUILayout.ExpandWidth(true));
         
         //Label C 
         GUILayout.Label("<b><i><size=18><color=#FC80A5>S</color><color=#FFFF9F>U</color><color=#99FF99>P</color><color=#76D7EA>E</color><color=#BF8FCC>R</color></size></i></b> <size=12><i>Character Controller</i></size>",l_scriptHeaderStyle,GUILayout.ExpandWidth(true));
@@ -1962,7 +1962,7 @@ public class SuperFPEditor : Editor{
 
         EditorGUILayout.Space(10);
         EditorGUILayout.Space();
-        //GUILayout.Label("<color=grey>Clip Stacks</color>",labelSubHeaderStyle,GUILayout.ExpandWidth(true));
+        //GUILayout.Label("<finalColor=grey>Clip Stacks</finalColor>",labelSubHeaderStyle,GUILayout.ExpandWidth(true));
         EditorGUI.indentLevel++;
         footStepFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(footStepFoldout,footStepFoldout?  "<color=#B83C82>hide clip stacks</color>" : "<color=#B83C82>show clip stacks</color>",ShowMoreStyle);
         EditorGUILayout.EndFoldoutHeaderGroup();
@@ -2187,7 +2187,7 @@ public class SuperFPEditor : Editor{
         #region Web Links
         EditorGUILayout.Space(10);
         EditorGUILayout.LabelField("",GUI.skin.horizontalSlider,GUILayout.MaxHeight(6));EditorGUILayout.Space(); 
-        //GUILayout.Label("<color=grey>Support</color>",labelSubHeaderStyle,GUILayout.ExpandWidth(true));
+        //GUILayout.Label("<finalColor=grey>Support</finalColor>",labelSubHeaderStyle,GUILayout.ExpandWidth(true));
         EditorGUILayout.BeginVertical("box");
         GUI.color = new Color(0.16f,0.67f,0.87f,1)*3f;
         if(GUILayout.Button("<color=white>Open Support Page</color>",SupportButtonStyle)){
