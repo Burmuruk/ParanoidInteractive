@@ -742,9 +742,9 @@ MonoBehaviour:
   bodies:
   - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
     facePlace: {fileID: 6272267705917407616, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
-  - body: {fileID: 9060645837691183585, guid: efdf58c6197f673419206252cfc9c554, type: 3}
+  - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
     facePlace: {fileID: 1079992101206038839, guid: efdf58c6197f673419206252cfc9c554, type: 3}
-  - body: {fileID: 8158546733522993338, guid: 5eb582c3b68699e478133a00c8101576, type: 3}
+  - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
     facePlace: {fileID: 3063963519175470055, guid: 5eb582c3b68699e478133a00c8101576, type: 3}
   faces:
   - face: {fileID: 2153761854748011946, guid: 5b087596af325374a8aa32c114606413, type: 3}
@@ -756,17 +756,18 @@ MonoBehaviour:
   - face: {fileID: 3207152489102623435, guid: bc91402e92a98c14cbfb50022ba54136, type: 3}
     sanity: 3
     dialogs:
-    - medio
-    - maso
-    - me
+    - malo
+    - malo
+    - malo
   - face: {fileID: 4690831819338345703, guid: ef4ed1bd4848d6840bedab7e7de4549d, type: 3}
     sanity: 5
     dialogs:
-    - Bueno
-    - "Buen\xEDsimo"
-    - Tremendo
+    - malo
+    - malo
+    - malo
   sanity: 1
-  spawnPoints: []
+  spawnPoints:
+  - {fileID: 381422247}
 --- !u!114 &454550176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,6 +1522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reverse: 0
   objectPicked: 0
+  objIdx: 0
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1100710406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1686,14 @@ PrefabInstance:
     - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: sprintingSpeed
       value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: enableStaminaSystem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: enableSurvivalStats
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391147, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: m_Name

@@ -17,10 +17,19 @@ public class Walkie : MonoBehaviour, IInteractable
         this.dialog = dialog;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            imInteractive();
+        }
+    }
+
     public bool imInteractive()
     {
         OnSpeak?.Invoke(dialog); print(dialog);
-        return !hasSpeak;
+        hasSpeak = true;
+        return hasSpeak;
     }
 
     private void OnBecameInvisible()

@@ -40,6 +40,11 @@ public class WalkiesManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        ShowWalkie();
+    }
+
     public void SetSanity(int sanity) => this.sanity = sanity;
 
     public void ShowWalkie()
