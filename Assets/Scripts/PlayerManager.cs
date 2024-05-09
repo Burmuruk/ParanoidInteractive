@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
         if (time > 0 && time % 2<=0.01f && time > timeActual * 2 - .1)
         {
             timeActual = time;
-            barra += 2;
+            barra += 1;
             DecisionManager(barra);
         }
     }
