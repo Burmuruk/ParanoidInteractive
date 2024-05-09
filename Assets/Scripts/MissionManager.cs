@@ -81,7 +81,7 @@ public class MissionManager : MonoBehaviour
 
     private void ReportProgress(int value)
     {
-        playerManager.BarSanidadMas(value);
+        playerManager.BarSanidad(value);
     }
 
     private void RestartRandomMission()

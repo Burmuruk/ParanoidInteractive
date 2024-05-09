@@ -16,8 +16,8 @@ public class Manecillas : MonoBehaviour
         {
             var hour = ((int)GameManager.time) * 360 /12;
             var minute = (hour <= 0 ? GameManager.time : GameManager.time % hour) * 360;
-            hourM.transform.rotation = Quaternion.Euler(new Vector3(0, 0, hour));
-            minuteM.transform.rotation = Quaternion.Euler(new Vector3(0, 0, minute)); 
+            hourM.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, hour));
+            minuteM.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, minute)); 
         }
         else
         {

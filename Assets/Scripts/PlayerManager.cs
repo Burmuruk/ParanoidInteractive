@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour
     //alucionaciones
     //alteracion de movimiento
     public BarStates barStates;
-    float timeActual;
-    int barra;
+    float timeActual = 1;
+    int barra = 0;
     HallucinationManager hallucinationManager;
 
     private void Start()
@@ -28,15 +28,15 @@ public class PlayerManager : MonoBehaviour
     }
     public void BarraTime(float time)
     {
-        if (time > 0 && time % 2<=0.01f && time > timeActual * 2 - .1)
+        if (time > .5 && time % 4 <= 0.01f && time > timeActual * 4 - .1)
         {
-            timeActual = time;
+            timeActual++;
             barra += 1;
             DecisionManager(barra);
         }
     }
     public void DecisionManager(int barra)
-    {
+    {print(barra);
         if (barra == 1)
         {
             barStates=BarStates.Normal;

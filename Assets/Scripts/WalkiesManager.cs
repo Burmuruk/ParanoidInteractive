@@ -54,7 +54,9 @@ public class WalkiesManager : MonoBehaviour
 
         var body = Instantiate(bodies[bodyId].body, spawnPoint);
         var face = (from f in faces where f.sanity == sanity select f).First();
-        Instantiate(face.face, bodies[bodyId].facePlace.position, Quaternion.identity, body.transform);
+        var inst = Instantiate(face.face, bodies[bodyId].facePlace.position, Quaternion.identity, body.transform);
+        body.transform.localPosition = Vector3.zero;
+        inst.transform.localPosition = Vector3.zero;
 
         var walkieCmp = body.AddComponent<Walkie>();
         walkieCmp.SetDialog(face.dialogs[UnityEngine.Random.Range(0, face.dialogs.Length)]);
