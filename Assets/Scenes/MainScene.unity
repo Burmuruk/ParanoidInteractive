@@ -2813,31 +2813,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodies:
-  - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
+  - body: {fileID: 2153761854748011946, guid: 5b087596af325374a8aa32c114606413, type: 3}
     facePlace: {fileID: 6272267705917407616, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
-  - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
+  - body: {fileID: 2153761854748011946, guid: 5b087596af325374a8aa32c114606413, type: 3}
     facePlace: {fileID: 1079992101206038839, guid: efdf58c6197f673419206252cfc9c554, type: 3}
-  - body: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
+  - body: {fileID: 2153761854748011946, guid: 5b087596af325374a8aa32c114606413, type: 3}
     facePlace: {fileID: 3063963519175470055, guid: 5eb582c3b68699e478133a00c8101576, type: 3}
   faces:
-  - face: {fileID: 2153761854748011946, guid: 5b087596af325374a8aa32c114606413, type: 3}
+  - face: {fileID: 9060645837691183585, guid: d8e96fbd2f14b2a48a77f74e4026ecec, type: 3}
     sanity: 1
     dialogs:
-    - malo
-    - malisimo
-    - pesimo
-  - face: {fileID: 3207152489102623435, guid: bc91402e92a98c14cbfb50022ba54136, type: 3}
+    - "\xC1nimo, tu vida sigue brillando fuerte"
+    - Sonrisas y risas, eso nos gusta
+    - Siempre fuiste tan tierna y dulce, siempre sonriendo, siempre reluciendo
+    - Al menos ya no puede lastimarte
+  - face: {fileID: 9060645837691183585, guid: d2798165148d7fe409f1b0c7ee6685d8, type: 3}
+    sanity: 2
+    dialogs:
+    - "\xBFY si ya no tenemos un prop\xF3sito?\xBFQu\xE9 pasar\xE1 con nosotros?"
+    - "\xBFPor qu\xE9 la gente nos miraba as\xED? Demasiados ojos encima\u2026"
+    - "\xA1SU\xC9LTEME! \xA1NO HICE NADA MALO! \xA1POR FAVOR! !AUXILIO!"
+  - face: {fileID: 9060645837691183585, guid: 486dac31e0317d2448dcf30c44bf5866, type: 3}
     sanity: 3
     dialogs:
-    - malo
-    - malo
-    - malo
-  - face: {fileID: 4690831819338345703, guid: ef4ed1bd4848d6840bedab7e7de4549d, type: 3}
+    - "Nuestra vida empieza a carecer de sentido\u2026"
+    - "No entiendo, \xBFQu\xE9 haces?"
+    - "\xBFPor qu\xE9 nos pasa esto?"
+    - "Escucharte llorar desconsoladamente despu\xE9s de lo que te hizo me parte
+      el coraz\xF3n\u2026 *sonido de lluvia"
+  - face: {fileID: 6107044427687275156, guid: f2993f96ce6e3a848a31b00222cc9bcf, type: 3}
     sanity: 5
     dialogs:
-    - malo
-    - malo
-    - malo
+    - "\xA1Haz tus tareas ahora! No lo voy a repetir"
+    - "Tareas, tareas y m\xE1s tareas, hay que terminar r\xE1pido"
+    - "\xA1Jam\xE1s fuimos suficientes para NADIE, nuestra vida no ha valido para
+      nada!"
+    - "\xA1QU\xC9DATE QUIETA Y NO TE HAR\xC9 DA\xD1O! *sonido de cachetada* \xA1TE
+      DIJE QUE QUIETA!"
   sanity: 1
   spawnPoints:
   - {fileID: 923491131}
