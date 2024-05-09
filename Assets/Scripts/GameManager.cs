@@ -87,4 +87,6 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public void AddTime(float value) => timer += oneHour * value;
 }

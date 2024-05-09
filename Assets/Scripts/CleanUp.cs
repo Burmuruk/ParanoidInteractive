@@ -22,5 +22,10 @@ namespace Assets.Scripts
 
             return true;
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            imInteractive();
+        }
     }
 }

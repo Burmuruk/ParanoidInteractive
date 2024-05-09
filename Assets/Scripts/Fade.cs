@@ -9,16 +9,19 @@ public class Fade : MonoBehaviour
 
     public void StartFade()
     {
+        FindObjectOfType<GameManager>().AddTime(2);
         fade.SetTrigger("Start");
     }
 
     public void PlayAudio()
     {
-        audioSource.Play();
+        if (audioSource)
+            audioSource.Play();
     }
 
     public void StopAudio()
     {
-        audioSource.Stop();
+        if (audioSource)
+            audioSource?.Stop();
     }
 }
