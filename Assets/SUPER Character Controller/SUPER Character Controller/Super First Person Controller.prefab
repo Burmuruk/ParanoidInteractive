@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 6817638360860843947}
   - component: {fileID: 6817638360860843945}
   - component: {fileID: 6817638360860843946}
+  - component: {fileID: 7918792880246109447}
+  - component: {fileID: 4923682085892924159}
+  - component: {fileID: 8077782260561035554}
+  - component: {fileID: 7130364893023993452}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -92,6 +96,109 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6817638360860843948}
   m_Enabled: 1
+--- !u!114 &7918792880246109447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817638360860843948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76b3099f48542adb03c21f7919208b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SineWaveShader: {fileID: 4800000, guid: 16ca3aa75b0734d6fb078f7348a8c774, type: 3}
+--- !u!95 &4923682085892924159
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817638360860843948}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e6ee16bf72cbb24fb926ed352e0e701, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8077782260561035554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817638360860843948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0ba117f9d8e6a4a8a2aaca7154c935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectClick: 1
+  waveCount: 10
+  timeInfinity: 0
+  waveTime: 2
+  waveAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.219
+      value: 0.529
+      inSlope: -2.1942995
+      outSlope: -2.1942995
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  waveInternalRadio: 0.4
+  waveExternalRadio: 0.07
+  waveScale: 6
+  waveSpeed: 0.34
+  waveFrequency: 2.6
+  circleXScale: 1
+  circleYScale: 1
+--- !u!114 &7130364893023993452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817638360860843948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a9880fbb66a37499a4b4ff5514b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animators: {fileID: 4923682085892924159}
 --- !u!1 &6817638361354391147
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acb2371b9f0ce3429e7935fa5efe263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barStates: 0
   controllerPaused: 0
+  objectPicked: {fileID: 0}
+  handTransform: {fileID: 0}
   playerCamera: {fileID: 6817638360860843945}
   enableCameraControl: 1
   lockAndHideMouse: 1
