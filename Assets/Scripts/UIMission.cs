@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 class UIMission : MonoBehaviour
 {
     [SerializeField] Text txtMissions;
+
     List<IMission> missions;
     MissionManager missionManager;
 

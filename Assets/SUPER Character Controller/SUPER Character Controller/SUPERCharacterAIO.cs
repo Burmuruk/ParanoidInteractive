@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -21,8 +22,8 @@ using UnityEngine.InputSystem.Interactions;
 namespace SUPERCharacter{
 [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(CapsuleCollider))][AddComponentMenu("SUPER Character/SUPER Character Controller")]
 public class SUPERCharacterAIO : PlayerManager{
-    #region Variables
-
+        #region Variables
+   
     public bool controllerPaused = false;
     public GameObject objectPicked;
     public Transform handTransform;
@@ -1631,6 +1632,7 @@ public enum PauseModes{MakeKinematic, FreezeInPlace,BlockInputOnly}
 
 #region Interfaces
 public interface IInteractable{
+
     bool imInteractive();
 }
 
