@@ -17,8 +17,8 @@ public class Door : MonoBehaviour, IInteractable
     }
 
     IEnumerator OpenDoor(){
-        float alpha = 0, newY =transform.localEulerAngles.y+  (reverse? -openAngle: openAngle);
-        while(alpha <1){
+        float alpha = 0, newY = transform.localEulerAngles.y+  (reverse? -openAngle: openAngle);
+        while(alpha < 1){
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0,newY,0),alpha);
             alpha+= Time.deltaTime;
             yield return new WaitForEndOfFrame();
